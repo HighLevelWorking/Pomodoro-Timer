@@ -15,8 +15,8 @@ while True:
                 hours = i // 3600
                 minutes = (i % 3600) // 60
                 seconds = i % 60
-                format = f"{hours:02}:{minutes:02}:{seconds:02}"
-                print(format)
+                formated_Time = f"{hours:02}:{minutes:02}:{seconds:02}"
+                print(formated_Time, end = "\r")
                 time.sleep(1)
             print("------------------------------- Break Time -------------------------------")
             for x in reversed(range (0 , 1200)):
@@ -24,9 +24,9 @@ while True:
                 hours = x // 3600
                 minutes = (x % 3600) // 60
                 seconds = x % 60
-                format = f"{hours:02}:{minutes:02}:{seconds:02}"
+                formated_Time = f"{hours:02}:{minutes:02}:{seconds:02}"
                 time.sleep(1)
-                print(format)
+                print(formated_Time, end = "\r")
 
     elif user_choice == "no":
         print("Your timer wont start")
