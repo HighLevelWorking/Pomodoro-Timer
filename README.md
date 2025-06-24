@@ -1,0 +1,1 @@
+I'm a beginner and this is my first project which i created without any outside help. It is of course probably not the best way of doing it but I tried my best. If you are experienced I hope you could share some advise, lecture, documentation or anything else which would help me improve my skill level. Thank you.
