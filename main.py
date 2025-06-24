@@ -1,7 +1,12 @@
 import time
+import os
+
 #Pomodoro timer
 seconds_past = 3600
 
+
+def clear_screen():
+    os.system("cls" if os.name == "nt" else "clear")
 
 
 while True:
@@ -9,6 +14,7 @@ while True:
     if user_choice == "yes":
         print("Your timer has started")
         for z in range(0,8):
+            clear_screen()
             print("------------------------------- Work Time -------------------------------")
             for i in reversed(range (0 , seconds_past)):
 
@@ -16,8 +22,9 @@ while True:
                 minutes = (i % 3600) // 60
                 seconds = i % 60
                 formated_Time = f"{hours:02}:{minutes:02}:{seconds:02}"
-                print(formated_Time, end = "\r")
+                print(f"{formated_Time:<10}", end="\r")
                 time.sleep(1)
+            clear_screen()
             print("------------------------------- Break Time -------------------------------")
             for x in reversed(range (0 , 1200)):
 
@@ -26,7 +33,7 @@ while True:
                 seconds = x % 60
                 formated_Time = f"{hours:02}:{minutes:02}:{seconds:02}"
                 time.sleep(1)
-                print(formated_Time, end = "\r")
+                print(f"{formated_Time:<10}", end="\r")
 
     elif user_choice == "no":
         print("Your timer wont start")
