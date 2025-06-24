@@ -15,7 +15,7 @@ while True:
                 hours = i // 3600
                 minutes = (i % 3600) // 60
                 seconds = i % 60
-                format = f"{hours:02},{minutes:02},{seconds:02}"
+                format = f"{hours:02}:{minutes:02}:{seconds:02}"
                 print(format)
                 time.sleep(1)
             print("------------------------------- Break Time -------------------------------")
@@ -24,7 +24,7 @@ while True:
                 hours = x // 3600
                 minutes = (x % 3600) // 60
                 seconds = x % 60
-                format = f"{hours:02},{minutes:02},{seconds:02}"
+                format = f"{hours:02}:{minutes:02}:{seconds:02}"
                 time.sleep(1)
                 print(format)
 
