@@ -19,8 +19,8 @@ while Count == True:
             break
     elif type_of_setting == "c":
         workTime = input("Please enter the number of hours or minutes you want the timer to go on for: (End the number with either m for minutes or h for hours: )")
-        unit = workTime[-1].lower()  # Get the last character (m or h)
-        number = workTime[:-1]       # Get everything except the last character
+        unit = workTime[-1].lower()
+        number = workTime[:-1]       
         if number.isdigit():
             if unit == "h":
                 seconds_past = int(number) * 3600
