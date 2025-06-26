@@ -1,8 +1,42 @@
+#Pomodoro timer
 import time
 import os
 
-#Pomodoro timer
-seconds_past = 3600
+type_of_setting = input("Do you want to use a premade setting or make a custom one? (p for premade and c for custom): ").lower()
+Count = True
+
+while Count == True:
+    if type_of_setting == "p":
+        user_choice = int(input("Press 1 for a 60 minute work session and a 10 minute rest in between each session..." \
+        "Press 2 if you want a 30 minute work session with a 5 minute break in between: "))
+        if user_choice == 1:
+            seconds_past = 3600
+            break_time = 600
+            break
+        elif user_choice ==2:
+            seconds_past = 1800
+            break_time = 300
+            break
+    elif type_of_setting == "c":
+        workTime = input("Please enter the number of hours or minutes you want the timer to go on for: (End the number with either m for minutes or h for hours: )")
+        unit = workTime[-1].lower()  # Get the last character (m or h)
+        number = workTime[:-1]       # Get everything except the last character
+        if number.isdigit():
+            if unit == "h":
+                seconds_past = int(number) * 3600
+                break_time = int(input("Enter break time in minutes: ")) * 60
+                break
+            elif unit == "m":
+                seconds_past = int(number) * 60
+                break_time = int(input("Enter break time in minutes: ")) * 60
+                break
+            else:
+                print("Invalid unit. Use 'm' for minutes or 'h' for hours.")
+        else:
+            print("Please enter a valid number before the unit.")
+else:
+    print("You can only give p or c as your input")
+    
 
 
 def clear_screen():
@@ -26,7 +60,7 @@ while True:
                 time.sleep(1)
             clear_screen()
             print("------------------------------- Break Time -------------------------------")
-            for x in reversed(range (0 , 1200)):
+            for x in reversed(range (0 , break_time)):
 
                 hours = x // 3600
                 minutes = (x % 3600) // 60
